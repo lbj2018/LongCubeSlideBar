@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  LongCubeSlideBarMainViewController.h
 //  LongCubeSlideBar
 //
 //  Created by zhou dengfeng derek on 18/8/15.
@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MenuAction.h"
 
-@interface ViewController : UIViewController
-
+@interface LongCubeSlideBarMainViewController : UIViewController <MenuAction>
 
 @end
-

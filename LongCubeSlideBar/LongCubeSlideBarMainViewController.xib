@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7706"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LongCubeSlideBarMainViewController">
+            <connections>
+                <outlet property="centerContainerView" destination="slK-9u-oGT" id="wIc-7z-H34"/>
+                <outlet property="leftMenuContainerView" destination="AxF-tB-5Hp" id="MPM-0w-PBK"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AxF-tB-5Hp" userLabel="View - Left Menu">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="slK-9u-oGT" userLabel="View - Center View">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" red="0.40784313729999999" green="0.82352941180000006" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="slK-9u-oGT" secondAttribute="trailing" id="0QZ-ha-kYg"/>
+                <constraint firstItem="slK-9u-oGT" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="EUy-Ao-cm6"/>
+                <constraint firstAttribute="bottom" secondItem="AxF-tB-5Hp" secondAttribute="bottom" id="EoH-zI-XVH"/>
+                <constraint firstAttribute="trailing" secondItem="AxF-tB-5Hp" secondAttribute="trailing" id="NLh-th-S0e"/>
+                <constraint firstItem="AxF-tB-5Hp" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="RJy-xE-cCA"/>
+                <constraint firstAttribute="bottom" secondItem="slK-9u-oGT" secondAttribute="bottom" id="cE5-TW-tg4"/>
+                <constraint firstItem="AxF-tB-5Hp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="nUm-cg-cxl"/>
+                <constraint firstItem="slK-9u-oGT" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="t7I-PH-z8h"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <point key="canvasLocation" x="492" y="450"/>
+        </view>
+    </objects>
+</document>

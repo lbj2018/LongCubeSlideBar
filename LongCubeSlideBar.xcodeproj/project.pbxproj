@@ -9,11 +9,14 @@
 /* Begin PBXBuildFile section */
 		64F2126E1B8313DF005AFE66 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F2126D1B8313DF005AFE66 /* main.m */; };
 		64F212711B8313DF005AFE66 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F212701B8313DF005AFE66 /* AppDelegate.m */; };
-		64F212741B8313DF005AFE66 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F212731B8313DF005AFE66 /* ViewController.m */; };
-		64F212771B8313DF005AFE66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64F212751B8313DF005AFE66 /* Main.storyboard */; };
 		64F212791B8313E0005AFE66 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64F212781B8313E0005AFE66 /* Images.xcassets */; };
 		64F2127C1B8313E0005AFE66 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64F2127A1B8313E0005AFE66 /* LaunchScreen.xib */; };
 		64F212881B8313E0005AFE66 /* LongCubeSlideBarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F212871B8313E0005AFE66 /* LongCubeSlideBarTests.m */; };
+		64F212971B831401005AFE66 /* LongCubeSlideBarMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F212951B831401005AFE66 /* LongCubeSlideBarMenuViewController.m */; };
+		64F2129B1B8316EE005AFE66 /* LongCubeSlideBarMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F212991B8316EE005AFE66 /* LongCubeSlideBarMainViewController.m */; };
+		64F2129C1B8316EE005AFE66 /* LongCubeSlideBarMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64F2129A1B8316EE005AFE66 /* LongCubeSlideBarMainViewController.xib */; };
+		64F212A01B831A61005AFE66 /* CenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F2129E1B831A61005AFE66 /* CenterViewController.m */; };
+		64F212A11B831A61005AFE66 /* CenterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64F2129F1B831A61005AFE66 /* CenterViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +35,20 @@
 		64F2126D1B8313DF005AFE66 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		64F2126F1B8313DF005AFE66 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		64F212701B8313DF005AFE66 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		64F212721B8313DF005AFE66 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		64F212731B8313DF005AFE66 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		64F212761B8313DF005AFE66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		64F212781B8313E0005AFE66 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		64F2127B1B8313E0005AFE66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		64F212811B8313E0005AFE66 /* LongCubeSlideBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LongCubeSlideBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		64F212861B8313E0005AFE66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		64F212871B8313E0005AFE66 /* LongCubeSlideBarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LongCubeSlideBarTests.m; sourceTree = "<group>"; };
+		64F212941B831401005AFE66 /* LongCubeSlideBarMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LongCubeSlideBarMenuViewController.h; sourceTree = "<group>"; };
+		64F212951B831401005AFE66 /* LongCubeSlideBarMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LongCubeSlideBarMenuViewController.m; sourceTree = "<group>"; };
+		64F212981B8316EE005AFE66 /* LongCubeSlideBarMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LongCubeSlideBarMainViewController.h; sourceTree = "<group>"; };
+		64F212991B8316EE005AFE66 /* LongCubeSlideBarMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LongCubeSlideBarMainViewController.m; sourceTree = "<group>"; };
+		64F2129A1B8316EE005AFE66 /* LongCubeSlideBarMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LongCubeSlideBarMainViewController.xib; sourceTree = "<group>"; };
+		64F2129D1B831A61005AFE66 /* CenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CenterViewController.h; sourceTree = "<group>"; };
+		64F2129E1B831A61005AFE66 /* CenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CenterViewController.m; sourceTree = "<group>"; };
+		64F2129F1B831A61005AFE66 /* CenterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CenterViewController.xib; sourceTree = "<group>"; };
+		64F212A31B831D24005AFE66 /* MenuAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuAction.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,11 +90,9 @@
 		64F2126A1B8313DF005AFE66 /* LongCubeSlideBar */ = {
 			isa = PBXGroup;
 			children = (
+				64F212911B8313EE005AFE66 /* LongCube Slide Bar */,
 				64F2126F1B8313DF005AFE66 /* AppDelegate.h */,
 				64F212701B8313DF005AFE66 /* AppDelegate.m */,
-				64F212721B8313DF005AFE66 /* ViewController.h */,
-				64F212731B8313DF005AFE66 /* ViewController.m */,
-				64F212751B8313DF005AFE66 /* Main.storyboard */,
 				64F212781B8313E0005AFE66 /* Images.xcassets */,
 				64F2127A1B8313E0005AFE66 /* LaunchScreen.xib */,
 				64F2126B1B8313DF005AFE66 /* Supporting Files */,
@@ -117,6 +124,22 @@
 				64F212861B8313E0005AFE66 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		64F212911B8313EE005AFE66 /* LongCube Slide Bar */ = {
+			isa = PBXGroup;
+			children = (
+				64F212981B8316EE005AFE66 /* LongCubeSlideBarMainViewController.h */,
+				64F212991B8316EE005AFE66 /* LongCubeSlideBarMainViewController.m */,
+				64F2129A1B8316EE005AFE66 /* LongCubeSlideBarMainViewController.xib */,
+				64F212941B831401005AFE66 /* LongCubeSlideBarMenuViewController.h */,
+				64F212951B831401005AFE66 /* LongCubeSlideBarMenuViewController.m */,
+				64F2129D1B831A61005AFE66 /* CenterViewController.h */,
+				64F2129E1B831A61005AFE66 /* CenterViewController.m */,
+				64F2129F1B831A61005AFE66 /* CenterViewController.xib */,
+				64F212A31B831D24005AFE66 /* MenuAction.h */,
+			);
+			name = "LongCube Slide Bar";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,7 +222,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64F212771B8313DF005AFE66 /* Main.storyboard in Resources */,
+				64F2129C1B8316EE005AFE66 /* LongCubeSlideBarMainViewController.xib in Resources */,
+				64F212A11B831A61005AFE66 /* CenterViewController.xib in Resources */,
 				64F2127C1B8313E0005AFE66 /* LaunchScreen.xib in Resources */,
 				64F212791B8313E0005AFE66 /* Images.xcassets in Resources */,
 			);
@@ -219,9 +243,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64F212741B8313DF005AFE66 /* ViewController.m in Sources */,
+				64F2129B1B8316EE005AFE66 /* LongCubeSlideBarMainViewController.m in Sources */,
+				64F212971B831401005AFE66 /* LongCubeSlideBarMenuViewController.m in Sources */,
 				64F212711B8313DF005AFE66 /* AppDelegate.m in Sources */,
 				64F2126E1B8313DF005AFE66 /* main.m in Sources */,
+				64F212A01B831A61005AFE66 /* CenterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,14 +270,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		64F212751B8313DF005AFE66 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				64F212761B8313DF005AFE66 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		64F2127A1B8313E0005AFE66 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -350,6 +368,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LongCubeSlideBar/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -360,6 +379,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LongCubeSlideBar/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
