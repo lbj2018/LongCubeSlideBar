@@ -47,12 +47,44 @@
 
 - (void)addCenterViewController:(UIViewController *)vc {
     [self addChildViewController:vc];
+    vc.view.translatesAutoresizingMaskIntoConstraints = NO;
     [self.centerContainerView addSubview:vc.view];
+    
+    NSDictionary *viewsDictionary = @{ @"centerContainerView":vc.view };
+    
+    NSArray *constraint_POS_V = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[centerContainerView]-0-|"
+                                                                        options:0
+                                                                        metrics:nil
+                                                                          views:viewsDictionary];
+    
+    NSArray *constraint_POS_H = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[centerContainerView]-0-|"
+                                                                        options:0
+                                                                        metrics:nil
+                                                                          views:viewsDictionary];
+    
+    [self.centerContainerView addConstraints:constraint_POS_H];
+    [self.centerContainerView addConstraints:constraint_POS_V];
 }
 
 - (void)addLeftMenuViewController:(UIViewController *)vc {
     [self addChildViewController:vc];
+    vc.view.translatesAutoresizingMaskIntoConstraints = NO;
     [self.leftMenuContainerView addSubview:vc.view];
+    
+    NSDictionary *viewsDictionary = @{ @"leftMenuContainerView":vc.view };
+    
+    NSArray *constraint_POS_V = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[leftMenuContainerView]-0-|"
+                                                                        options:0
+                                                                        metrics:nil
+                                                                          views:viewsDictionary];
+    
+    NSArray *constraint_POS_H = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[leftMenuContainerView]-0-|"
+                                                                        options:0
+                                                                        metrics:nil
+                                                                          views:viewsDictionary];
+    
+    [self.leftMenuContainerView addConstraints:constraint_POS_H];
+    [self.leftMenuContainerView addConstraints:constraint_POS_V];
 }
 
 - (void)removeViewController:(UIViewController *)vc {
