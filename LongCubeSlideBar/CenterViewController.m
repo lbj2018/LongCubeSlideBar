@@ -23,6 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UINavigationItem *item = self.navigationItem;
     self.navigationItem.leftBarButtonItem = self.menuBarButtonItem;
 }
 

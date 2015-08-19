@@ -7,14 +7,13 @@
 //
 
 #import "LongCubeSlideBarMainViewController.h"
-#import "LongCubeSlideBarMenuViewController.h"
-#import "CenterViewController.h"
 
-@interface LongCubeSlideBarMainViewController ()
-@property (weak, nonatomic) IBOutlet UIView *leftMenuContainerView;
-@property (weak, nonatomic) IBOutlet UIView *centerContainerView;
+@interface LongCubeSlideBarMainViewController () 
+@property (strong, nonatomic) UIView *leftMenuContainerView;
+@property (strong, nonatomic) UIView *centerContainerView;
 @property (nonatomic) CGFloat finalLeftEdge;
 @property (nonatomic) CGFloat initialLeftEdge;
+@property (nonatomic) BOOL canStartSlide;
 @end
 
 @implementation LongCubeSlideBarMainViewController
@@ -28,56 +27,124 @@
 }
 
 - (void)setupView {
-    LongCubeSlideBarMenuViewController *leftMenuVC = [[LongCubeSlideBarMenuViewController alloc] init];
+    [self setupContainerView];
+    if (self.leftMenuViewController) {
+        self.leftMenuViewController.delegate = self;
+        self.leftMenuViewController.mainVC = self;
+
+        [self addLeftMenuViewController:self.leftMenuViewController];
+//        [self addChildViewController:self.leftMenuViewController];
+//        [self.leftMenuContainerView addSubview:self.leftMenuViewController.view];
+        
+        self.centerViewController = [[UINavigationController alloc] initWithRootViewController:[[UIViewController alloc] init]];
+        [self addCenterViewController:self.centerViewController];
+    } else {
+        @throw [NSException exceptionWithName:@"LongCubeSlideBarMainViewController"
+                                       reason:@"self.leftMenuViewController and self.centerViewController cannot be nil"
+                                     userInfo:nil];
+    }
+}
+
+- (void)addCenterViewController:(UIViewController *)vc {
+    [self addChildViewController:vc];
+    [self.centerContainerView addSubview:vc.view];
+}
+
+- (void)addLeftMenuViewController:(UIViewController *)vc {
+    [self addChildViewController:vc];
+    [self.leftMenuContainerView addSubview:vc.view];
+}
+
+- (void)removeViewController:(UIViewController *)vc {
+    [vc removeFromParentViewController];
+    [vc.view removeFromSuperview];
+}
+
+- (void)setupContainerView {
+    self.leftMenuContainerView = [[UIView alloc] init];
+    self.leftMenuContainerView.translatesAutoresizingMaskIntoConstraints = NO;
+    self.leftMenuContainerView.backgroundColor = [UIColor blackColor];
+    [self.view addSubview:self.leftMenuContainerView];
     
-    [self addChildViewController:leftMenuVC];
-    [self.leftMenuContainerView addSubview:leftMenuVC.view];
+    self.centerContainerView = [[UIView alloc] init];
+    self.centerContainerView.translatesAutoresizingMaskIntoConstraints = NO;
+    self.centerContainerView.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:self.centerContainerView];
+
+    NSDictionary *viewsDictionary = @{ @"leftMenuContainerView":self.leftMenuContainerView,
+                                       @"centerContainerView":self.centerContainerView };
     
-    CenterViewController *centerVC = [[CenterViewController alloc] init];
-    centerVC.menuAction = self;
-    UINavigationController *centerNVC = [[UINavigationController alloc] initWithRootViewController:centerVC];
+    NSArray *constraint_POS_V = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[leftMenuContainerView]-0-|"
+                                                                        options:0
+                                                                        metrics:nil
+                                                                          views:viewsDictionary];
     
-    [self addChildViewController:centerNVC];
-    [self.centerContainerView addSubview:centerNVC.view];
+    NSArray *constraint_POS_H = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[leftMenuContainerView]-0-|"
+                                                                        options:0
+                                                                        metrics:nil
+                                                                          views:viewsDictionary];
+    
+    [self.view addConstraints:constraint_POS_H];
+    [self.view addConstraints:constraint_POS_V];
+    
+    constraint_POS_V = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[centerContainerView]-0-|"
+                                                                        options:0
+                                                                        metrics:nil
+                                                                          views:viewsDictionary];
+    
+    constraint_POS_H = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[centerContainerView]-0-|"
+                                                                        options:0
+                                                                        metrics:nil
+                                                                          views:viewsDictionary];
+    
+    [self.view addConstraints:constraint_POS_H];
+    [self.view addConstraints:constraint_POS_V];
 }
 
 - (void)pan:(UIPanGestureRecognizer *)gesture {
     CGFloat translationX = [gesture translationInView:self.view].x;
 //    CGFloat velocityX     = [gesture velocityInView:self.view].x;
-
-    switch (gesture.state) {
-        case UIGestureRecognizerStateBegan:
-        {
-            CGRect newFrame = self.centerContainerView.frame;
-            self.initialLeftEdge = newFrame.origin.x;
-            break;
-        }
-        case UIGestureRecognizerStateChanged:
-        {
-            CGRect newFrame = self.centerContainerView.frame;
-            newFrame.origin.x += translationX;
-            if (newFrame.origin.x < 0) newFrame.origin.x = 0;
-            if (newFrame.origin.x > self.view.bounds.size.width - 100) newFrame.origin.x = self.view.bounds.size.width - 100;
-            self.centerContainerView.frame = newFrame;
-            break;
-        }
-        case UIGestureRecognizerStateEnded:
-        case UIGestureRecognizerStateCancelled:
-        {
-            CGRect newFrame = self.centerContainerView.frame;
-            self.finalLeftEdge = newFrame.origin.x;
-            
-            [UIView animateWithDuration:0.2 animations:^{
-                if (self.finalLeftEdge > self.initialLeftEdge) {
-                    [self moveCenterViewToRight];
+    
+        switch (gesture.state) {
+            case UIGestureRecognizerStateBegan: {
+                CGPoint locationInCenterView = [gesture locationInView:self.centerContainerView];
+                if (CGRectContainsPoint(self.centerContainerView.bounds, locationInCenterView)) {
+                    self.canStartSlide = YES;
+                    CGRect newFrame = self.centerContainerView.frame;
+                    self.initialLeftEdge = newFrame.origin.x;
                 } else {
-                    [self moveCenterViewToCenter];
+                    self.canStartSlide = NO;
                 }
-            }];
-            break;
+                break;
+            }
+            case UIGestureRecognizerStateChanged: {
+                if (self.canStartSlide) {
+                    CGRect newFrame = self.centerContainerView.frame;
+                    newFrame.origin.x += translationX;
+                    if (newFrame.origin.x < 0) newFrame.origin.x = 0;
+                    if (newFrame.origin.x > self.view.bounds.size.width - 100) newFrame.origin.x = self.view.bounds.size.width - 100;
+                    self.centerContainerView.frame = newFrame;
+                }
+                break;
+            }
+            case UIGestureRecognizerStateEnded:
+            case UIGestureRecognizerStateCancelled:
+            default: {
+                if (self.canStartSlide) {
+                    CGRect newFrame = self.centerContainerView.frame;
+                    self.finalLeftEdge = newFrame.origin.x;
+                    
+                    [UIView animateWithDuration:0.2 animations:^{
+                        if (self.finalLeftEdge > self.initialLeftEdge) {
+                            [self moveCenterViewToRight];
+                        } else {
+                            [self moveCenterViewToCenter];
+                        }
+                    }];
+                }
+                break;
+            }
         }
-        default: break;
-    }
     [gesture setTranslation:CGPointZero inView:self.view];
 }
 
@@ -93,6 +160,15 @@
     self.centerContainerView.frame = newFrame;
 }
 
+- (void)showCenterWithController:(UIViewController *)vc {
+    [self removeViewController:vc];
+    [self addCenterViewController:vc];
+    
+    self.centerViewController = vc;
+    
+    [UIView animateWithDuration:0.2 animations:^{ [self moveCenterViewToCenter]; }];
+}
+
 #pragma mark - MenuAction
 
 - (void)showMenuWithAnimation:(BOOL)animation {
@@ -104,6 +180,12 @@
             [self moveCenterViewToRight];
         }
     }];
+}
+
+#pragma mark - LongCubeSlideBarMenuViewControllerDelegate
+
+- (void)slideBarMenuViewController:(LongCubeSlideBarMenuViewController *)controller didShowCenterWithController:(UIViewController *)centerVC {
+    [self showCenterWithController:centerVC];
 }
 
 @end

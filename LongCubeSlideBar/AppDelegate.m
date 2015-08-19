@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "LongCubeSlideBarMainViewController.h"
+#import "MainViewController.h"
 
 @interface AppDelegate ()
 
@@ -20,7 +20,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    LongCubeSlideBarMainViewController *mainVC = [[LongCubeSlideBarMainViewController alloc] init];
+    MainViewController *mainVC = [[MainViewController alloc] init];
     self.window.rootViewController = mainVC;
     
     [self.window makeKeyAndVisible];

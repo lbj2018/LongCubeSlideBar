@@ -14,9 +14,11 @@
 		64F212881B8313E0005AFE66 /* LongCubeSlideBarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F212871B8313E0005AFE66 /* LongCubeSlideBarTests.m */; };
 		64F212971B831401005AFE66 /* LongCubeSlideBarMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F212951B831401005AFE66 /* LongCubeSlideBarMenuViewController.m */; };
 		64F2129B1B8316EE005AFE66 /* LongCubeSlideBarMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F212991B8316EE005AFE66 /* LongCubeSlideBarMainViewController.m */; };
-		64F2129C1B8316EE005AFE66 /* LongCubeSlideBarMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64F2129A1B8316EE005AFE66 /* LongCubeSlideBarMainViewController.xib */; };
 		64F212A01B831A61005AFE66 /* CenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F2129E1B831A61005AFE66 /* CenterViewController.m */; };
 		64F212A11B831A61005AFE66 /* CenterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64F2129F1B831A61005AFE66 /* CenterViewController.xib */; };
+		64F212A91B83311B005AFE66 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F212A81B83311B005AFE66 /* MainViewController.m */; };
+		64F212AD1B83313D005AFE66 /* LeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F212AB1B83313D005AFE66 /* LeftMenuViewController.m */; };
+		64F212AE1B83313D005AFE66 /* LeftMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64F212AC1B83313D005AFE66 /* LeftMenuViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,11 +46,15 @@
 		64F212951B831401005AFE66 /* LongCubeSlideBarMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LongCubeSlideBarMenuViewController.m; sourceTree = "<group>"; };
 		64F212981B8316EE005AFE66 /* LongCubeSlideBarMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LongCubeSlideBarMainViewController.h; sourceTree = "<group>"; };
 		64F212991B8316EE005AFE66 /* LongCubeSlideBarMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LongCubeSlideBarMainViewController.m; sourceTree = "<group>"; };
-		64F2129A1B8316EE005AFE66 /* LongCubeSlideBarMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LongCubeSlideBarMainViewController.xib; sourceTree = "<group>"; };
 		64F2129D1B831A61005AFE66 /* CenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CenterViewController.h; sourceTree = "<group>"; };
 		64F2129E1B831A61005AFE66 /* CenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CenterViewController.m; sourceTree = "<group>"; };
 		64F2129F1B831A61005AFE66 /* CenterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CenterViewController.xib; sourceTree = "<group>"; };
 		64F212A31B831D24005AFE66 /* MenuAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuAction.h; sourceTree = "<group>"; };
+		64F212A71B83311B005AFE66 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		64F212A81B83311B005AFE66 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		64F212AA1B83313D005AFE66 /* LeftMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftMenuViewController.h; sourceTree = "<group>"; };
+		64F212AB1B83313D005AFE66 /* LeftMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftMenuViewController.m; sourceTree = "<group>"; };
+		64F212AC1B83313D005AFE66 /* LeftMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeftMenuViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +99,14 @@
 				64F212911B8313EE005AFE66 /* LongCube Slide Bar */,
 				64F2126F1B8313DF005AFE66 /* AppDelegate.h */,
 				64F212701B8313DF005AFE66 /* AppDelegate.m */,
+				64F212A71B83311B005AFE66 /* MainViewController.h */,
+				64F212A81B83311B005AFE66 /* MainViewController.m */,
+				64F212AA1B83313D005AFE66 /* LeftMenuViewController.h */,
+				64F212AB1B83313D005AFE66 /* LeftMenuViewController.m */,
+				64F212AC1B83313D005AFE66 /* LeftMenuViewController.xib */,
+				64F2129D1B831A61005AFE66 /* CenterViewController.h */,
+				64F2129E1B831A61005AFE66 /* CenterViewController.m */,
+				64F2129F1B831A61005AFE66 /* CenterViewController.xib */,
 				64F212781B8313E0005AFE66 /* Images.xcassets */,
 				64F2127A1B8313E0005AFE66 /* LaunchScreen.xib */,
 				64F2126B1B8313DF005AFE66 /* Supporting Files */,
@@ -131,12 +145,8 @@
 			children = (
 				64F212981B8316EE005AFE66 /* LongCubeSlideBarMainViewController.h */,
 				64F212991B8316EE005AFE66 /* LongCubeSlideBarMainViewController.m */,
-				64F2129A1B8316EE005AFE66 /* LongCubeSlideBarMainViewController.xib */,
 				64F212941B831401005AFE66 /* LongCubeSlideBarMenuViewController.h */,
 				64F212951B831401005AFE66 /* LongCubeSlideBarMenuViewController.m */,
-				64F2129D1B831A61005AFE66 /* CenterViewController.h */,
-				64F2129E1B831A61005AFE66 /* CenterViewController.m */,
-				64F2129F1B831A61005AFE66 /* CenterViewController.xib */,
 				64F212A31B831D24005AFE66 /* MenuAction.h */,
 			);
 			name = "LongCube Slide Bar";
@@ -222,9 +232,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64F2129C1B8316EE005AFE66 /* LongCubeSlideBarMainViewController.xib in Resources */,
 				64F212A11B831A61005AFE66 /* CenterViewController.xib in Resources */,
 				64F2127C1B8313E0005AFE66 /* LaunchScreen.xib in Resources */,
+				64F212AE1B83313D005AFE66 /* LeftMenuViewController.xib in Resources */,
 				64F212791B8313E0005AFE66 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -244,8 +254,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				64F2129B1B8316EE005AFE66 /* LongCubeSlideBarMainViewController.m in Sources */,
+				64F212A91B83311B005AFE66 /* MainViewController.m in Sources */,
 				64F212971B831401005AFE66 /* LongCubeSlideBarMenuViewController.m in Sources */,
 				64F212711B8313DF005AFE66 /* AppDelegate.m in Sources */,
+				64F212AD1B83313D005AFE66 /* LeftMenuViewController.m in Sources */,
 				64F2126E1B8313DF005AFE66 /* main.m in Sources */,
 				64F212A01B831A61005AFE66 /* CenterViewController.m in Sources */,
 			);

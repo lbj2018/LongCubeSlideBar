@@ -8,7 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "MenuAction.h"
+#import "LongCubeSlideBarMenuViewController.h"
 
-@interface LongCubeSlideBarMainViewController : UIViewController <MenuAction>
+@interface LongCubeSlideBarMainViewController : UIViewController <MenuAction, LongCubeSlideBarMenuViewControllerDelegate>
+
+@property (strong, nonatomic) LongCubeSlideBarMenuViewController *leftMenuViewController;
+@property (strong, nonatomic) UIViewController *centerViewController;
+
+- (void)showCenterWithController:(UIViewController *)vc;
 
 @end
